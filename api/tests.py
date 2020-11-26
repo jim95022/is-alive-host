@@ -18,13 +18,13 @@ def test_live():
 
 
 def test_down():
-    assert not is_alive_host('invalid.domain.son')
-    assert not is_alive_host('semrush')
-    assert not is_alive_host('test')
-    assert not is_alive_host('google')
-    assert not is_alive_host('1243')
-    assert not is_alive_host()
-    assert not is_alive_host('127.0.0.1:5000') # but it may be available if the localhost application is active
+    assert not is_alive_host('invalid.domain.son')[0]
+    assert not is_alive_host('semrush')[0]
+    assert not is_alive_host('test')[0]
+    assert not is_alive_host('google')[0]
+    assert not is_alive_host('1243')[0]
+    assert not is_alive_host()[0]
+    assert not is_alive_host('127.0.0.1:5000')[0] # but it may be available if the localhost application is active
 
 test_live()
 test_down()

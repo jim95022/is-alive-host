@@ -18,4 +18,4 @@ def is_alive_host(hostname: str = 'None') -> bool:
     except:
         response = -1
      
-    return 100 <= response < 400
+    return 100 <= response < 400, parsed_hostname.netloc
