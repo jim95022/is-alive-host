@@ -1,0 +1,6 @@
+__pycache__/*
+venv/*
+flask_ap/*
+api/sockets.py
+api/socketscanner.py
+.gitignore

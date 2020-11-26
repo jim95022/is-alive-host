@@ -19,5 +19,3 @@ def is_alive_host(hostname: str = 'None') -> bool:
         response = -1
      
     return 100 <= response < 400
-
-is_alive_host('vk.com') 
