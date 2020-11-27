@@ -7,14 +7,18 @@
 <code>
 
 >> curl https://isalivehost.herokuapp.com/
+<pre>
 {
     "info":"You need to specify https://isalivehost.herokuapp.com/healthz?hostname='<'place here the hostname you are interested in'>'"
 }
+</pre>
 
 >> curl https://isalivehost.herokuapp.com/healthz?hostname=semrush.com
+<pre>
 { 
     "status": "up"
 }
+</pre>
 </code>
 
 <li>Добавил небольшую <a href=https://isalivehostflask.herokuapp.com/>страницу</a> на FLASK для демонстрации использования API</li>
