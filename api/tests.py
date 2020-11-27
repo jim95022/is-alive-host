@@ -1,4 +1,4 @@
-from app import is_alive_host
+from app_sockets import is_alive_host
 
 
 def test_live():
