@@ -10,7 +10,8 @@ def is_alive_host(hostname: str = 'None') -> bool:
     try:
         req = requests.get(hostname, timeout=5)
         response = req.status_code
-    except:
+    except Exception as e:
         response = -1
+        raise e
 
     return 100 <= response < 400
