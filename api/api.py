@@ -9,7 +9,7 @@ app = FastAPI()
 
 @app.get("/")
 def info():
-   return  {'info': 'You need to specify https://isalivehost.herokuapp.com/healthz?hostname=<place here the hostname you are interested in>'}
+   return  {'info': 'You need to specify /healthz?hostname=<place here the hostname you are interested in>'}
 
 
 @app.get("/healthz")

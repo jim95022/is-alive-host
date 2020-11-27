@@ -12,7 +12,7 @@
 
 <pre>
 {
-    "info":"You need to specify https://isalivehost.herokuapp.com/healthz?hostname='<'place here the hostname you are interested in'>'"
+    "info":"You need to specify /healthz?hostname='<'place here the hostname you are interested in'>'"
 }
 </pre>
 
@@ -23,7 +23,7 @@
 }
 </pre>
 
-<p>Для <b>semrush.com</b> при отправки GET запроса с heroku возвращает статус 503, соответственно {"status": "down"}. Возможно CLOUDFLARENET блокирует запросы с хероку. При запуске программы локально или через другой сервер (не хероку) возвращается {"status": "up"}  </p>
+<p>Для <b>semrush.com</b> при отправки GET запроса с heroku возвращает статус 503, соответственно {"status": "down"}. Возможно стоит блокировка запросов с хероку. При запуске программы локально или через другой сервер (не хероку) возвращается {"status": "up"}. Также чтобы это обойти можно использовать PROXY</p>
 <h2>Запуск локально</h2>
 <p>Установка и активация виртуального окружения</p>
 
@@ -40,14 +40,18 @@
 
 
 <h2>Docker</h2>
+
 <p>Чтобы собрать Docker образ</p>
+
 <code> $ sudo docker build -t ishostaliveapp:1.0 .</code>
 
-<p>Чтобы запустить Docker образ</p>
-<code> $ sudo docker run -it -d -p 80:8000 ishostaliveapp:1.0</code>
-
 <p>Чтобы загрузить готовый образ</p>
-<code> $ sudo docker pull jim95022/is_alive_host</code>
+
+<code> $ sudo docker pull jim95022/ishostaliveapp:1.0</code>
+
+<p>Чтобы запустить Docker образ</p>
+
+<code> $ sudo docker run -d -p 8000:80 jim95022/ishostaliveapp:1.0</code>
 
 
 <hr>
