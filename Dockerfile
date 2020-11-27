@@ -1,7 +1,7 @@
 
 FROM python:3.9
 
-RUN pip install fastapi uvicorn requests urllib3
+RUN pip install fastapi uvicorn requests
 
 EXPOSE 80
 

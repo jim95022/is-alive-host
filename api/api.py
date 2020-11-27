@@ -4,15 +4,15 @@ from fastapi import FastAPI
 
 from api.app import is_alive_host
 
+
 app = FastAPI()
+
+@app.get("/")
+def info():
+   return  {'info': 'You need to specify https://isalivehost.herokuapp.com/healthz?hostname=<place here the hostname you are interested in>'}
+
 
 @app.get("/healthz")
 def read_item(hostname: Optional[str]):
-    data = {}
-    status, host = is_alive_host(hostname)
-    if status:
-        data['status'] = 'up'
-    else:
-        data['status'] = 'down'
-    data['hostname'] = host
-    return  data
+    status = is_alive_host(hostname)
+    return  {'status': 'up' if status else 'down'}
