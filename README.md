@@ -2,17 +2,19 @@
 <ul>
   <li>api/app.py - функция <b>is_alive_host</b> проверяет, что запрашиваемый хост возвращает http status 100 - 399 и  возвращает True/False</li>
   <li>api/test.py - представлено тестирование функции <b>is_alive_host</b></li>
-  <li>api/app.py - api сервис который работает на <b>fastapi</b></li>
+  <li>api/app.py - API сервис который работает на <b>fastapi</b></li>
+  <li>Загрузил сервис на <a href='https://isalivehost.herokuapp.com/'>хероку</a></li>
+  <li>Завернул приложение в docker</li>
   <li>Добавил небольшую <a href=https://isalivehostflask.herokuapp.com/>страницу</a> на <b>FLASK</b> для демонстрации использования API</li>
 </ul>  
 
-  <p>пример использования:</p>
+<h2>пример использования:</h2>
 
 <code>$ curl https://isalivehost.herokuapp.com/ </code> 
 
 <pre>
 {
-    "info":"You need to specify /healthz?hostname='<'place here the hostname you are interested in'>'"
+    "info":"You need to specify /healthz?hostname=&lt;place here the hostname you are interested in&gt;"
 }
 </pre>
 
@@ -24,7 +26,10 @@
 </pre>
 
 <p>Для <b>semrush.com</b> при отправки GET запроса с heroku возвращает статус 503, соответственно {"status": "down"}. Возможно стоит блокировка запросов с хероку. При запуске программы локально или через другой сервер (не хероку) возвращается {"status": "up"}. Также чтобы это обойти можно использовать PROXY</p>
+<p>Можно добавить логирование. Я люблю это делать с помощью <b>loguru</b> и отслеживать в логах номера статусов и исключения.</p>
+
 <h2>Запуск локально</h2>
+
 <p>Установка и активация виртуального окружения</p>
 
 <code> $ virtualenv venv --python=3.9 </code>
@@ -41,9 +46,9 @@
 
 <h2>Docker</h2>
 
-<p>Чтобы собрать Docker образ</p>
+<p>Пример, чтобы собрать Docker образ</p>
 
-<code> $ sudo docker build -t ishostaliveapp:1.0 .</code>
+<code> $ sudo docker build -t jim95022/ishostaliveapp:1.0 .</code>
 
 <p>Чтобы загрузить готовый образ</p>
 
@@ -53,6 +58,7 @@
 
 <code> $ sudo docker run -d -p 8000:80 jim95022/ishostaliveapp:1.0</code>
 
+<p>после чего приложение будет доступно по адресу http://localhost:8000/</p>
 
 <hr>
 <h1>Задание</h1>
