@@ -3,33 +3,39 @@
   <li>api/app.py - функция is_alive_host проверяет, что запрашиваемый хост возвращает http status 100 - 399 и  возвращает True/False</li>
   <li>api/test.py - представлено тестирование функции is_alive_host</li>
   <li>api/app.py - api сервис который работает на fastapi</li>
-  <p>пример использования</p>
-<code>
+  <li>Добавил небольшую <a href=https://isalivehostflask.herokuapp.com/>страницу</a> на FLASK для демонстрации использования API</li>
+</ul>  
 
->> curl https://isalivehost.herokuapp.com/
+  <p>пример использования:</p>
+
+<code>$ curl https://isalivehost.herokuapp.com/ </code> 
+
 <pre>
 {
     "info":"You need to specify https://isalivehost.herokuapp.com/healthz?hostname='<'place here the hostname you are interested in'>'"
 }
 </pre>
 
->> curl https://isalivehost.herokuapp.com/healthz?hostname=semrush.com
+<code>$ curl https://isalivehost.herokuapp.com/healthz?hostname=semrush.com</code> 
 <pre>
 { 
-    "status": "up"
+    "status": "down"
 }
 </pre>
-</code>
 
-<li>Добавил небольшую <a href=https://isalivehostflask.herokuapp.com/>страницу</a> на FLASK для демонстрации использования API</li>
-<li>C помощью Dockergile можно собрать докер образ и запустить его</li>
-</ul>  
+<p>Чтобы собрать Docker образ</p>
+<code> $ sudo docker build -t ishostaliveapp:1.0 .</code>
+
+<p>Чтобы запустить Docker образ</p>
+<code> $ sudo docker run -it -d -p 80:8000 ishostaliveapp:1.0</code>
+
+<p>Чтобы загрузить готовый образ</p>
+<code> $ sudo docker pull jim95022/is_alive_host</code>
+
 
 <hr>
 <h1>Задание</h1>
 
-# python_intern
----
 
 ## requirements
 
