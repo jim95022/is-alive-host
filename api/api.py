@@ -2,7 +2,7 @@ from typing import Optional
 
 from fastapi import FastAPI
 
-from api.sockets import is_alive_host
+from api.app_sockets import is_alive_host
 
 
 app = FastAPI()

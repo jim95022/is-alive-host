@@ -1,7 +1,7 @@
 <h1>Решение</h1>
 <ul>
   <li>api/app.py - функция <b>is_alive_host</b> проверяет, что запрашиваемый хост возвращает http status 100 - 399 и  возвращает True/False</li>
-  <li>api/app_sockets.py - представлено тестирование функции <b>is_alive_host</b></li>
+  <li>api/app_sockets.py - Альтернативная функция <b>is_alive_host</b> реализованная с помощью <b>sockets</b></li>
   <li>api/test.py - представлено тестирование функции <b>is_alive_host</b></li>
   <li>api/app.py - API сервис который работает на <b>fastapi</b></li>
   <li>Загрузил сервис на <a href='https://isalivehost.herokuapp.com/'>хероку</a></li>
