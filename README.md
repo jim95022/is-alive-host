@@ -19,7 +19,7 @@
 }
 </pre>
 
-<code>$ curl https://isalivehost.herokuapp.com/healthz?hostname=google.com</code> 
+<code>$ curl https://isalivehost.herokuapp.com/healthz?hostname=semrush.com</code> 
 <pre>
 { 
     "status": "up"
