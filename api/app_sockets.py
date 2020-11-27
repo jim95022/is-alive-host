@@ -17,5 +17,4 @@ def is_alive_host(hostname: str = 'None') -> bool:
     except:
         response = -1 
     finally:
-
         return 100 <= int(response) < 400
