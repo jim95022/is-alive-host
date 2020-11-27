@@ -5,6 +5,7 @@ def test_live():
     assert is_alive_host('semrush.com')
     assert is_alive_host('https://www.semrush.com/')
     assert is_alive_host('http://www.semrush.com/')
+    assert is_alive_host('http://www.semrush.com/somepage/')
     assert is_alive_host('https://semrush.com')
     assert is_alive_host('google.com')
     assert is_alive_host('google.com:80')
@@ -15,7 +16,6 @@ def test_live():
 def test_down():
     assert not is_alive_host('invalid.domain.son')
     assert not is_alive_host('http')
-    assert not is_alive_host('http.com')
     assert not is_alive_host('semrush')
     assert not is_alive_host('test')
     assert not is_alive_host('google')
