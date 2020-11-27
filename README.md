@@ -1,9 +1,9 @@
 <h1>Решение</h1>
 <ul>
-  <li>api/app.py - функция is_alive_host проверяет, что запрашиваемый хост возвращает http status 100 - 399 и  возвращает True/False</li>
-  <li>api/test.py - представлено тестирование функции is_alive_host</li>
-  <li>api/app.py - api сервис который работает на fastapi</li>
-  <li>Добавил небольшую <a href=https://isalivehostflask.herokuapp.com/>страницу</a> на FLASK для демонстрации использования API</li>
+  <li>api/app.py - функция <b>is_alive_host</b> проверяет, что запрашиваемый хост возвращает http status 100 - 399 и  возвращает True/False</li>
+  <li>api/test.py - представлено тестирование функции <b>is_alive_host</b></li>
+  <li>api/app.py - api сервис который работает на <b>fastapi</b></li>
+  <li>Добавил небольшую <a href=https://isalivehostflask.herokuapp.com/>страницу</a> на <b>FLASK</b> для демонстрации использования API</li>
 </ul>  
 
   <p>пример использования:</p>
@@ -16,13 +16,30 @@
 }
 </pre>
 
-<code>$ curl https://isalivehost.herokuapp.com/healthz?hostname=semrush.com</code> 
+<code>$ curl https://isalivehost.herokuapp.com/healthz?hostname=google.com</code> 
 <pre>
 { 
-    "status": "down"
+    "status": "up"
 }
 </pre>
 
+<p>Для <b>semrush.com</b> при отправки GET запроса с heroku возвращает статус 503, соответвенно {"status": "down"}. Возможно CLOUDFLARENET блокирует запросы с хероку. При запуске прокраммы локально или через другой сервер (не хероку) возвращается {"status": "up"}  </p>
+<h2>Запуск локально</h2>
+<p>Установка и активация виртуального окружения</p>
+
+<code> $ virtualenv venv --python=3.9 </code>
+
+<code> $ . venv/bin/activate </code>
+
+<p>Установка необхадимых зависимостей</p>
+
+<code> $ pip install -r requirements.txt </code>
+<p>Запуск приложения</p>
+
+<code> $ uvicorn api.api:app </code>
+
+
+<h2>Docker</h2>
 <p>Чтобы собрать Docker образ</p>
 <code> $ sudo docker build -t ishostaliveapp:1.0 .</code>
 
