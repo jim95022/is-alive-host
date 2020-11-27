@@ -12,6 +12,6 @@ def is_alive_host(hostname: str = 'None') -> bool:
         response = req.status_code
     except Exception as e:
         response = -1
-        raise e
+        print(e)
 
     return 100 <= response < 400
