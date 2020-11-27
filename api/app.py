@@ -8,11 +8,12 @@ def is_alive_host(hostname: str = 'None') -> bool:
         hostname = 'http://' + hostname
 
     try:
-        req = requests.get(hostname, timeout=5)
+        headers = {'user-agent': 'Mozilla/5.0 (X11; Linux x86_64)'}
+        req = requests.get(hostname, headers=headers, timeout=5)
         response = req.status_code
-        print('myresp', response)
     except Exception as e:
         response = -1
-        print(e)
 
     return 100 <= response < 400
+
+print(is_alive_host('semrush.com'))
